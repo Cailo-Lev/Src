@@ -1,9 +1,9 @@
 <?php
 namespace App\Calculo;
 class IntegradorNumerico {
- private float $inicio; // LÃ­mite inferior (segundos)
- private float $fin; // LÃ­mite superior (segundos)
- private int $pasos; // PrecisiÃ³n (n subintervalos)
+ private float $inicio; // Límite inferior (segundos)
+ private float $fin; // Límite superior (segundos)
+ private int $pasos; // Precisión (n subintervalos)
  private int $tipoCarga; // Tipo de carga (1: Normal, 2: Constante, 3: Fuerte)
  public function __construct(float $a, float $b, int $n = 1000 , int $tipoCarga = 1) {
  if ($a >= $b) {
@@ -14,7 +14,7 @@ final.");
  }
  if ($n <= 0) {
 
- throw new \InvalidArgumentException("La precisiÃ³n (n) debe ser un nÃºmero
+ throw new \InvalidArgumentException("La precisión (n) debe ser un número
 positivo.");
 
  }
@@ -27,8 +27,8 @@ positivo.");
  }
 
  /**
- * Modela la funciÃ³n de potencia P(t) = t^2 + 2t (Ejemplo de arga ccreciente)
- * En informÃ¡tica, esto representarÃ­a los Watts consumidos.
+ * Modela la función de potencia P(t) = t^2 + 2t (Ejemplo de arga ccreciente)
+ * En informática, esto representaría los Watts consumidos.
  */
 
  private function funcionPotencia(float $t): float {
@@ -42,7 +42,7 @@ positivo.");
  case 4: // Formula original: P(t) = t^2 + 2t
  return pow($t, 2) + 2 * $t;
  }
-    return 0; // Valor por defecto (no deberÃ­a ocurrir)
+    return 0; // Valor por defecto (no debería ocurrir)
 }
 
  public function calcularEnergiaTotal(): float {
